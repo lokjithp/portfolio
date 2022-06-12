@@ -6,30 +6,70 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 	</head>
+	<script>
+		// Open the Modal
+		function openModal() {
+		  document.getElementById("myModal").style.display = "block";
+		}
+		
+		// Close the Modal
+		function closeModal() {
+		  document.getElementById("myModal").style.display = "none";
+		}
+		
+		var slideIndex = 1;
+		showSlides(slideIndex);
+		
+		// Next/previous controls
+		function plusSlides(n) {
+		  showSlides(slideIndex += n);
+		}
+		
+		// Thumbnail image controls
+		function currentSlide(n) {
+		  showSlides(slideIndex = n);
+		}
+		
+		function showSlides(n) {
+		  var i;
+		  var slides = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  var captionText = document.getElementById("caption");
+		  if (n > slides.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = slides.length}
+		  for (i = 0; i < slides.length; i++) {
+			slides[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+			dots[i].className = dots[i].className.replace(" active", "");
+		  }
+		  slides[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " active";
+		  captionText.innerHTML = dots[slideIndex-1].alt;
+		}
+		</script>
 	<body class="is-preload">
 
 		<!-- Header -->
 			<section id="header">
-				<header>
-					<span class="image avatar"><img src="images/selfie (2).jpg" alt="" /></span>
-					<h1 id="logo"><a href="#">P.V.N. Lokjith</a></h1>
+					<center><img src="images/selfie (2).jpg" class="image avatar"  height="125" width="125" > </center>
+					<br>
+					<h1 id="logo">P.V.N. Lokjith</a></h1>
 					<p>MSc in Machine Learning<br />
 					 Royal Holloway University of London</p>
-					 <i>" The result may not be immediate but I'm confident that I'm gonna get it eventually!"</i>
-				</header>
-				<footer>
+					 <!--<i>" The result may not be immediate but I'm confident that I'm gonna get it eventually!"</i>-->
 					<ul class="icons">
 						<li><a href="https://www.linkedin.com/in/p-v-n-lokjith-/" class="icon brands fa-linkedin"><span class="label">Facebook</span></a></li>
 						<li><a href="https://twitter.com/lokjithpigili" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
 						<li><a href="https://github.com/lokjithp" class="icon brands fa-github"><span class="label">Github</span></a></li>
 						<li><a href="mailto:lokjithpigili@gmail.com" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
 					</ul>
-				</footer>
 				<nav id="nav">
 					<ul>
-						<li><a href="#one" class="active">About</a></li>
+						<li><a href="#one" class="active">About me!</a></li>
 						<li><a href="#two">Things I Can Do</a></li>
-						<li><a href="#three">A Few Accomplishments</a></li>
+						<li><a href="#three">My Projects</a></li>
+						<li><a href="#Interests">My Interests</a></li>
 						<li><a href="#four">Contact</a></li>
 					</ul>
 				</nav>
@@ -136,9 +176,9 @@
 											</div>
 										</article>
 										<article>
-											<a href="https://github.com/lokjithp/Machine-Learning-Algorithms/tree/main/Normalizations" class="image"><img src="images/cancer.jpg" width="175" height="175" alt="" /></a>
+											<a href="https://github.com/lokjithp/Machine-Learning-Algorithms/tree/main/Normalization" class="image"><img src="images/cancer.jpg" width="175" height="175" alt="" /></a>
 											<div class="inner">
-												<h4>Understanding Normalization with the help of Cancer dataset!</h4>
+												<h4>Applying various Normalization on breast cancer dataset</h4>
 												<p></p>
 											</div>
 										</article>
@@ -147,7 +187,82 @@
 										</article> 
 								</div>
 							</section>
-
+							<section id="Interests">
+								<div class=" container">
+									<h3>My Interests</h3>
+									<p> I love to spend my free time watching movies! <a href="https://www.imdb.com/title/tt0109830/"> Forrest Gump</a> is my favourite movie!</p>
+								<P> Sometimes, I'd like to click few pictures, do check them out!</P>
+								
+								<!-- Images used to open the lightbox -->
+								<div class="row">
+									<div class="column">
+									<img src="images/dog.jpeg" width="100" height="100" onclick="openModal();currentSlide(1)" class="hover-shadow">
+									</div>
+									<div class="column">
+									<img src="images/lake.jpeg" width="100" height="100" onclick="openModal();currentSlide(2)" class="hover-shadow">
+									</div>
+									<div class="column">
+									<img src="images/sea.png" width="100" height="100" onclick="openModal();currentSlide(3)" class="hover-shadow">
+									</div>
+									<div class="column">
+									<img src="images/cycl.jpeg" width="100" height="100" onclick="openModal();currentSlide(4)" class="hover-shadow">
+									</div>
+								</div>
+								
+								<!-- The Modal/Lightbox -->
+								<div id="myModal" class="modal">
+									<span class="close cursor" onclick="closeModal()">&times;</span>
+									<div class="modal-content">
+								
+									<div class="mySlides">
+										<div class="numbertext">1 / 4</div>
+										<img src="images/dog.jpeg" width="1200" height="550" >
+									</div>
+								
+									<div class="mySlides">
+										<div class="numbertext">2 / 4</div>
+										<img src="images/lake.jpeg" width="1200" height="550" >
+									</div>
+								
+									<div class="mySlides">
+										<div class="numbertext">3 / 4</div>
+										<img src="images/sea.png" width="1200" height="550" >
+									</div>
+								
+									<div class="mySlides">
+										<div class="numbertext">4 / 4</div>
+										<img src="images/cycl.jpeg" width="1200" height="550" >
+									</div>
+								
+									<!-- Next/previous controls -->
+									<a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+									<a class="next" onclick="plusSlides(1)">&#10095;</a>
+								
+									<!-- Caption text -->
+									<div class="caption-container">
+										<p id="caption"></p>
+									</div>
+								
+									<!-- Thumbnail image controls -->
+									<div class="column">
+										<img class="demo" src="images/dog.jpeg" width="175" height="175" onclick="currentSlide(1)" alt="Dog">
+									</div>
+								
+									<div class="column">
+										<img class="demo" src="images/lake.jpeg" width="175" height="175" onclick="currentSlide(2)" alt="Lake">
+									</div>
+								
+									<div class="column">
+										<img class="demo" src="images/sea.png"  width="175" height="175" onclick="currentSlide(3)" alt="Boat">
+									</div>
+								
+									<div class="column">
+										<img class="demo" src="images/cycl.jpeg"  width="175" height="175" onclick="currentSlide(4)" alt="Cycle">
+									</div>
+									</div>
+								</div>
+							</div>
+							</section>
 						<!-- Four -->
 							<section id="four">
 								<div class="container">
