@@ -294,20 +294,35 @@
 								<div class="container">
 									<h3>Contact Me</h3>
 									<p></p>
-									<form method="post" action="mailto:lokjithpigili@gmail.com" enctype="text/plain">
-										<div class="row gtr-uniform">
-											<div class="col-6 col-12-xsmall"><input type="text" name="name" id="name" placeholder="Name" /></div>
-											<div class="col-6 col-12-xsmall"><input type="email" name="email" id="email" placeholder="Email" /></div>											<div class="col-12"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
-											<div class="col-12">
-												<ul class="actions">
-													<li><input type="submit" class="primary" value="Send Message" /></li>
-													<li><input type="reset" value="Reset Form" /></li>
-												</ul>
-											</div>
-										</div>
 									</form>
 								</div>
 							</section>
 							<h6>© Template taken from https://html5up.net/ and modified as per my taste!</h6>
 						</body>
-				</html>
+						<!--Start of Tawk.to Script-->
+						<script type="text/javascript">
+						var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+						Tawk_API.onLoad = function() {
+							// Auto-response when chat starts
+							Tawk_API.addEvent('chat:start', function() {
+								Tawk_API.sendMessage('Hello! Thank you for reaching out. How can I assist you today?');
+							});
+
+							// Auto-response for every message received
+							Tawk_API.addEvent('message:received', function(data) {
+								setTimeout(() => {
+									Tawk_API.sendMessage('Thank you for your message! I will get back to you shortly.');
+								}, 1000); // Delay for a more natural response
+							});
+						};
+						(function(){
+						var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+						s1.async=true;
+						s1.src='https://embed.tawk.to/680218287f5f42190ba73d7f/1ip42so2j';
+						s1.charset='UTF-8';
+						s1.setAttribute('crossorigin','*');
+						s0.parentNode.insertBefore(s1,s0);
+						})();
+						</script>
+						<!--End of Tawk.to Script-->
+					</html>
